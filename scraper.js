@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { gotScraping } = require("got-scraping");
 const cheerio = require("cheerio");
 const fs = require("fs");
 const path = require("path");
@@ -642,15 +643,23 @@ async function fetchPichau() {
   for (const category of PICHAU_CATEGORIES) {
     try {
       const url = `https://www.pichau.com.br${category.path}`;
-      const { data } = await axios.get(url, {
+      
+      const response = await gotScraping({
+        url,
+        headerGeneratorOptions: {
+          browsers: [{ name: "chrome", minVersion: 126 }],
+          devices: ["desktop"],
+          locales: ["pt-BR"],
+          operatingSystems: ["windows"],
+        },
         headers: {
-          ...BROWSER_HEADERS,
           Referer: "https://www.pichau.com.br/",
           Origin: "https://www.pichau.com.br",
         },
-        timeout: 20000,
+        timeout: { request: 20000 },
       });
 
+      const data = response.body;
       const $ = cheerio.load(data);
 
       // Tentar via __NEXT_DATA__ primeiro
