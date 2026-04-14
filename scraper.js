@@ -99,12 +99,13 @@ const COMMON_SEARCH_TERMS = [
 const PICHAU_CATEGORIES = [
   { path: "/hardware/placa-de-video", label: "Placa de Vídeo" },
   { path: "/hardware/processadores", label: "Processadores" },
-  { path: "/hardware/memoria-ram", label: "Memória RAM" },
+  { path: "/hardware/memorias", label: "Memória RAM" },
   { path: "/hardware/ssd", label: "SSD" },
-  { path: "/perifericos/teclados", label: "Teclados" },
-  { path: "/perifericos/mouse", label: "Mouses" },
-  { path: "/perifericos/headset", label: "Headsets" },
+  { path: "/perifericos/teclado", label: "Teclados" },
+  { path: "/perifericos/acessorios", label: "Mouses" },
+  { path: "/perifericos/fone-de-ouvido", label: "Headsets" },
   { path: "/hardware/fontes", label: "Fontes" },
+  { path: "/hardware/placa-m-e", label: "Placa Mãe" },
   { path: "/hardware/cooler-processador/water-coolers", label: "Water Cooler" },
   { path: "/hardware/cooler-processador/air-coolers", label: "Air Cooler" },
 ];
