@@ -101,11 +101,11 @@ const PICHAU_CATEGORIES = [
   { path: "/hardware/processadores", label: "Processadores" },
   { path: "/hardware/memorias", label: "Memória RAM" },
   { path: "/hardware/ssd", label: "SSD" },
+  { path: "/hardware/placa-m-e", label: "Placa-Mãe" },
   { path: "/perifericos/teclado", label: "Teclados" },
   { path: "/perifericos/acessorios", label: "Mouses" },
   { path: "/perifericos/fone-de-ouvido", label: "Headsets" },
-  { path: "/hardware/fontes", label: "Fontes" },
-  { path: "/hardware/placa-m-e", label: "Placa Mãe" },
+  { path: "/hardware/fonte", label: "Fontes" },
   { path: "/hardware/cooler-processador/water-coolers", label: "Water Cooler" },
   { path: "/hardware/cooler-processador/air-coolers", label: "Air Cooler" },
 ];
