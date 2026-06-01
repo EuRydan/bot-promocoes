@@ -334,7 +334,6 @@ telegramBot.onText(/\/status/, (msg) => {
 // ─── Inicialização ──────────────────────────────────────────
 
 async function start() {
-  async function start() {
   await discordClient.login(DISCORD_TOKEN);
   
   // Iniciar Worker da fila do Telegram
