@@ -334,6 +334,7 @@ telegramBot.onText(/\/status/, (msg) => {
 // ─── Inicialização ──────────────────────────────────────────
 
 async function start() {
+  async function start() {
   await discordClient.login(DISCORD_TOKEN);
   
   // Iniciar Worker da fila do Telegram
@@ -344,9 +345,14 @@ async function start() {
 
   // Agendar scraper
   setInterval(runScraperCycle, CHECK_INTERVAL);
-}
 
-start().catch(err => {
-  console.error("❌ Erro fatal na inicialização:", err);
-  process.exit(1);
-});
+  // ─── Servidor HTTP para manter vivo no Render (free tier) ───
+  const http = require("http");
+  const PORT = process.env.PORT || 3000;
+  http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end("Promo.Rydanbot online");
+  }).listen(PORT, () => {
+    console.log(`🌐 Health server rodando na porta ${PORT}`);
+  });
+}
