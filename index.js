@@ -355,3 +355,4 @@ async function start() {
     console.log(`🌐 Health server rodando na porta ${PORT}`);
   });
 }
+start();
